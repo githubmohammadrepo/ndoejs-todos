@@ -1,11 +1,48 @@
-body {
-  padding:20px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}
-.bg-navy{
-  background-color: navy !important;
-}
+    body {
+        padding: 20px;
+        font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQYxmGLjnPK9N0SF6R3oFGEo1z2W6KmghsLQg&usqp=CAU');
+    }
+    
+    .bg-image {
+        /* background-image: url('/images/application/new.png');
+         */
+        /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMWIAbh4ScVxnKcERqEE6aMVYzMkxhhPP3IQ&usqp=CAU'); */
+        background-color: #f6f0ee !important;
+        box-shadow: 1px 1px 18px #EBDCD9, 1px 1px 18px #EBDCD9;
+    }
+    
+    a {
+        color: #00B7FF;
+    }
+    
+    .bg-navy {
+        background-color: navy !important;
+    }
+    
+    .text-fwhite {
+        color: floralwhite
+    }
+    
+    .btn-navy {
+        background-color: rgb(8, 8, 160) !important;
+    }
+    
+    .bg-aqua {
+        background-color: rgb(65, 11, 214);
+        color: rgb(255, 255, 255);
+    }
+    
+    .bg-aqua:hover,
+    .bg-aqua:focus {
+        color: cadetblue;
+    }
+    
+    .sub-active {
+        background-color: rgba(11, 28, 122, 0.945);
+    }
+    
+    img {
+        max-height: 300px !important;
+        min-height: 300px !important;
+    }

@@ -1,0 +1,34 @@
+<%- include('./layout/header'); -%>
+    <div class="container-fluid">
+
+        <%- include('./layout/subHeader') -%>
+
+
+            <!-- 
+    this is one component todo that can remove or make it as complete or as uncomplete
+   -->
+            <!-- start one todo component -->
+            <div class="row bg-image alert mt-3 bg-secondary p-sm-3 px-0 justify-content-center">
+                <% if(images.length){ %>
+                    <% for(image of images) {%>
+                        <div class="card m-auto col-12 col-sm-6  col-md-4 col-lg-3" style="min-width:18rem;margin-bottom:12px !important">
+                            <img class="card-img-top" src="<%= image.src %>" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text text-center">
+                                    <%= image.title %>.</p>
+                            </div>
+                        </div>
+                        <% } %>
+                            <% } else{%>
+                                <div class="card m-auto col-12 col-sm-6  col-md-4 col-lg-3" style="min-width:18rem;margin-bottom:12px !important">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Image Not Found</h5>
+                                    </div>
+                                </div>
+                                <% } %>
+            </div>
+            <!-- end one todo component -->
+
+
+    </div>
+    <%- include('./layout/footer'); -%>

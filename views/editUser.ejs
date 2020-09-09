@@ -1,0 +1,69 @@
+<%- include('./layout/header'); -%>
+    <div class="container-fluid">
+
+        <%- include('./layout/subHeader') -%>
+
+            <div class="row justify-content-center my-4">
+                <div class="col-12 m-auto  text-center col-sm-10 col-md-8 col-lg-6 col-xl-4" style="min-width:23rem !important">
+
+                    <div class="card mt-2 bg-primary m-auto">
+                        <div class="card-header">
+                            <h2 class="text-light text-center">Create New User</h2>
+                        </div>
+                        <div class="card-body text-fwhite">
+                            <form action="/users/<%= user.id %>/update" method="POST">
+
+                                <!-- row for first name and last name input -->
+                                <div class="row">
+                                    <!-- first name input group -->
+                                    <div class="col form-group">
+                                        <label for="firstName">first Name</label>
+                                        <input type="text" class="form-control" name="firstName" id="firstName" value="<%= user.firstName %>" placeholder="john...">
+                                    </div>
+
+                                    <!-- last name input group -->
+                                    <div class="col form-group">
+                                        <label for="lastName">last Name</label>
+                                        <input type="text" class="form-control" name="lastName" id="lastName" value="<%= user.lastName %>" placeholder="doe ...">
+                                    </div>
+                                </div>
+
+                                <!-- email input group -->
+                                <div class="form-group">
+                                    <label for="Email">Email Address</label>
+                                    <input type="email" class="form-control" name="email" id="Email" value="<%= user.email %>" placeholder="example@gamil.com">
+                                </div>
+
+                                <!-- image url input group -->
+                                <div class="form-group">
+                                    <label for="imageUrl">Image Url</label>
+                                    <input type="text" class="form-control" id="imageUrl" name="imageUrl" value="<%= user.Images[0].src %>" placeholder="data:image/png;base64,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">
+                                </div>
+
+                                <!-- iamge title input group -->
+                                <div class="form-group">
+                                    <label for="imageTitle">Image title</label>
+                                    <input type="text" class="form-control" name="imageTitle" id="imageTitle" value="<%= user.Images[0].title %>" placeholder="image title">
+                                </div>
+
+                                <!-- <div class="form-group">
+              <label for="exampleFormControlSelect1">Example select</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div> -->
+                                <div class="form-group text-center mb-0">
+                                    <button type="submit" class="btn btn-navy text-fwhite">Update User</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    <%- include('./layout/footer'); -%>

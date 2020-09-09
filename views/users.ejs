@@ -1,0 +1,24 @@
+<%- include('./layout/header'); -%>
+    <div class="container-fluid">
+
+        <%- include('./layout/subHeader',{path:path}) -%>
+
+
+            <!-- 
+    this is one component todo that can remove or make it as complete or as uncomplete
+   -->
+            <!-- start one todo component -->
+            <div class="row bg-image  alert mt-3 bg-secondary p-sm-3 px-0 justify-content-center">
+                <% for(user of users) {%>
+                    <% if(user.Images.length){ %>
+                        <%- include('./components/oneUser',{firstName:user.firstName,lastName:user.lastName,email:user.email,image:user.Images[0].src, userId:user.id}); -%>
+                            <% } else{%>
+                                <%- include('./components/oneUser',{firstName:user.firstName,lastName:user.lastName,email:user.email,image:"https://t1.daumcdn.net/cfile/tistory/256FE13F54F1EE2A33", userId: user.id}); -%>
+                                    <% } %>
+                                        <% } %>
+            </div>
+            <!-- end one todo component -->
+
+
+    </div>
+    <%- include('./layout/footer'); -%>

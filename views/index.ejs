@@ -1,0 +1,38 @@
+<%- include('./layout/header'); -%>
+<div class="container-fluid">
+
+  <div class="list-group mt-5">
+    <li href="#" class="list-group-item list-group-item-action active">
+      Cras justo odio
+    </li>
+  </div>
+
+  <!-- 
+    this is one component todo that can remove or make it as complete or as uncomplete
+   -->
+  <!-- start one todo component -->
+  <div class="row alert mt-3 bg-secondary p-sm-3 px-0">
+    <div class="col-12 px-3 alert alert-warning alert-dismissible fade show" role="alert">
+      <div class="row">
+        <div class="col-11">
+
+          <strong>Holy guacamole!</strong> You should check in on some of those fields below.eck in on some of those
+          fields below.eck in on some of those fields below. name {{name}}
+        </div>
+
+        <div class="col-1 px-0 text-center  h-100">
+          <button href="#" @click="remove" class=".remove d-flex p-0 btn btn-block bg-danger w-100 py-0 text-white text-center">
+            <span class="m-auto" aria-hidden="true">&times;</span>
+          </button>
+          <a href="#" class="btn p-0 btn-block bg-primary w-100 py-0 text-white text-center">
+            <span class="my-auto" aria-hidden="true">&#10004;</span> <!-- html tick symbol-->
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end one todo component -->
+
+
+</div>
+<%- include('./layout/footer'); -%>

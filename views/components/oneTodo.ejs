@@ -1,0 +1,26 @@
+<!-- start one todo component -->
+<div class="col-12 px-3 alert alert-warning alert-dismissible fade show" role="alert">
+    <div class="row">
+        <div class="col-11">
+
+            <h4>
+                <%= todo.id%>
+                    <%= todo.title %>
+            </h4>
+            <p>
+                <%= todo.description %>
+            </p>
+        </div>
+
+        <div class="col-1 px-0 text-center  h-100">
+            <button href="#" @click="remove" class=".remove d-flex p-0 btn btn-block bg-danger w-100 py-0 text-white text-center">
+          <span class="m-auto" aria-hidden="true">&times;</span>
+      </button>
+            <a href="#" class="btn p-0 btn-block bg-primary w-100 py-0 text-white text-center">
+                <span class="my-auto" aria-hidden="true">&#10004;</span>
+                <!-- html tick symbol-->
+            </a>
+        </div>
+    </div>
+</div>
+<!-- end one todo component -->

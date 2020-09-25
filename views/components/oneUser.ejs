@@ -1,14 +1,26 @@
 <div class="card m-auto col-12 col-sm-6  col-md-4 col-lg-3" style="min-width:18rem;margin-bottom:12px !important">
     <img class="card-img-top" src="<%= image %>" alt="Card image cap">
     <div class="card-body">
-        <h5 class="card-title">
-            <%= firstName %>
-                <%= lastName %>
-        </h5>
-        <p class="card-text">
-            <%= email %>.</p>
-        <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-        <a href="/users/<%=userId%>/edit" class="btn btn-sm btn-info">edit</a>
-        <a href="/users/<%=userId%>/delete" class="btn btn-sm btn-danger">Delete</a>
+
+        <p class="m-0 border-info">user Informations</p>
+        <hr class="btn-danger my-1">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <%= firstName %>
+                    <%= lastName %>
+            </li>
+            <li class="list-group-item">
+                roles:[
+                <%for(role of userRoles){%>
+                    <%= role.name %>
+                        <%}%>] </li>
+        </ul>
+        <li class="list-group-item">email:
+            <%= email %>.</li>
+        <div class="col-12 btn-group" role="group" aria-label="Basic example">
+            <a href="#" class="btn btn-sm btn-primary">more</a>
+            <a href="/users/<%=userId%>/edit" class="btn btn-sm btn-info">edit</a>
+            <a href="/users/<%=userId%>/delete" class="btn btn-sm btn-danger">Delete</a>
+        </div>
     </div>
 </div>

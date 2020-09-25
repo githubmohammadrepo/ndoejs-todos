@@ -11,14 +11,19 @@ module.exports = {
          *   isBetaMember: false
          * }], {});
          */
-        let string = Math.random().toString(36).substr(5)
-        await queryInterface.bulkInsert('images', [{
-            userId: Math.round(Math.random() * 10),
-            title: string,
-            src: 'https://freepngimg.com/thumb/selena_gomez/8-2-selena-gomez-png.png',
+
+        await queryInterface.bulkInsert('roles', [{
+            name: "admin",
+            description: 'some description for admin',
+            createdAt: new Date(Date.now()),
+            updatedAt: new Date(Date.now())
+        }, {
+            name: "author",
+            description: 'some description for author',
             createdAt: new Date(Date.now()),
             updatedAt: new Date(Date.now())
         }], {})
+
 
     },
 
@@ -29,6 +34,7 @@ module.exports = {
          * Example:
          * await queryInterface.bulkDelete('People', null, {});
          */
-        await queryInterface.bulkDelete('images', null, {})
+        await queryInterface.bulkDelete('roles', null, {})
+
     }
 };

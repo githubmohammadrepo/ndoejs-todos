@@ -1,7 +1,7 @@
-<%- include('./layout/header'); -%>
+<%- include('../layout/header'); -%>
     <div class="container-fluid">
 
-        <%- include('./layout/subHeader') -%>
+        <%- include('../layout/subHeader') -%>
 
             <div class="row justify-content-center my-4">
                 <div class="col-12 m-auto  text-center col-sm-10 col-md-8 col-lg-6 col-xl-4" style="min-width:23rem !important">
@@ -46,16 +46,14 @@
                                     <input type="text" class="form-control" name="imageTitle" id="imageTitle" placeholder="image title">
                                 </div>
 
-                                <!-- <div class="form-group">
-              <label for="exampleFormControlSelect1">Example select</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div> -->
+                                <div class="form-group">
+                                    <label for="userRole">User Role</label>
+                                    <select class="form-control" multiple id="userRole" name="roleId">
+                                        <% for(role of roles){%>
+                                            <option value="<%= role.id %>" <% if(roles[0]==role){%> selected <%}%> ><%= role.name %></option>
+                                        <% } %>
+                            </select>
+                                </div>
                                 <div class="form-group text-center mb-0">
                                     <button type="submit" class="btn btn-navy text-fwhite">Create User</button>
                                 </div>
@@ -66,4 +64,4 @@
             </div>
 
     </div>
-    <%- include('./layout/footer'); -%>
+    <%- include('../layout/footer'); -%>

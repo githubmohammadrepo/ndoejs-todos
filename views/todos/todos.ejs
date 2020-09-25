@@ -1,0 +1,52 @@
+<%- include('../layout/header'); -%>
+    <div class="container-fluid">
+
+        <%- include('../layout/subHeader') -%>
+
+            <div class="row  alert mt-3 bg-secondary p-sm-3 px-0">
+                <% for(todo of todos){%>
+                    <%- include( '../components/oneTodo',{todo}) -%>
+                        <% } %>
+
+            </div>
+
+
+            <div class="row justify-content-center">
+                <nav class="m-auto" aria-label="...">
+                    <ul class="pagination">
+
+
+                        <li class="page-item  <%= (currentPage)==0 ? 'disabled' :''   %>">
+                            <a class="page-link" href="/todos/<%= currentPage-1 %>">
+                                Previous
+                                </a>
+                        </li>
+                        <% for(item of paginate){ %>
+
+                            <% if(item == currentPage){ %>
+                                <li class="page-item active">
+                                    <span class="page-link">
+                                        <%= item+1 %>
+                                        <span class="sr-only">(current)</span>
+                                    </span>
+                                </li>
+                                <% }else {%>
+                                    <li class="page-item">
+                                        <a class="page-link" href="/todos/<%= item %>">
+                                            <%= item+1 %>
+                                        </a>
+                                    </li>
+
+                                    <% } %>
+                                        <% } %>
+                                            <li class="page-item <%= (currentPage+2)>count ? 'disabled' :''   %>">
+                                                <a class="page-link" href="/todos/<%= currentPage+1%>">
+                                                Next
+                                                </a>
+                                            </li>
+
+                    </ul>
+                </nav>
+            </div>
+    </div>
+    <%- include('../layout/footer'); -%>

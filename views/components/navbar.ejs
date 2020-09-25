@@ -1,24 +1,41 @@
 <nav class="alert  p-auto navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">HomePage</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="/">HomePage</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse text-center" id="navbarTogglerDemo02">
-    <ul class="navbar-nav m-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link btn" href="#">all todos <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link btn" href="#">yesterday</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link btn" href="#">today + <%= homePage %></a>
-      </li>
-    </ul>
-    <form class="d-flex m-auto justify-self-center">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
+    <div class="collapse navbar-collapse text-center" id="navbarTogglerDemo02">
+        <ul class="navbar-nav m-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link btn" href="/todos/0">all todos <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown my-auto">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  signIn
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <% if(login) { %>
+                        <form action="/auth/logout" method="post">
+                            <input class="dropdown-item" type="submit" value="logout">
+                        </form>
+                        <% }else{ %>
+                            <a class="dropdown-item" href="/auth/login">Login</a>
+
+                            <a class="dropdown-item" href="/auth/register">Register</a>
+                            <% } %>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link btn" href="#">yesterday</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  bg-info text-light btn" href="/todos/newTodo">new todo</a>
+            </li>
+        </ul>
+        <form class="d-flex m-auto justify-self-center">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success  my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
 </nav>

@@ -1,0 +1,40 @@
+<%- include('../layout/header'); -%>
+    <div class="container-fluid">
+
+        <%- include('../layout/subHeader') -%>
+
+            <div class="row justify-content-center my-4">
+                <div class="col-12 m-auto  text-center col-sm-10 col-md-8 col-lg-6 col-xl-4" style="min-width:23rem !important">
+
+                    <div class="card mt-2 bg-primary m-auto">
+                        <div class="card-header">
+                            <h2 class="text-light text-center">Create New Todo</h2>
+                        </div>
+                        <div class="card-body text-fwhite">
+                            <form action="/todos/newTodo" method="POST">
+                                <input type="hidden" name="userId" value="<%= user.id %>">
+                                <!-- email input group -->
+                                <div class="form-group">
+                                    <label for="title">todo title</label>
+                                    <input type="text" class="form-control" name="title" id="title" placeholder="todo title ...">
+                                </div>
+
+
+                                <!-- iamge title input group -->
+                                <div class="form-group">
+                                    <label for="description">Image title</label>
+                                    <textarea class="form-control" id="description" name="description" placeholder="description todos ..."></textarea>
+                                </div>
+
+
+                                <div class="form-group text-center mb-0">
+                                    <button type="submit" class="btn btn-navy text-fwhite">Create Todo</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    <%- include('../layout/footer'); -%>
